@@ -4,7 +4,7 @@
 import os
 from os import path
 
-from setuptools import find_packages, setup
+from setuptools import find_packages, setup, find_namespace_packages
 
 
 def get_version():
@@ -54,5 +54,6 @@ setup(
         "dataclasses; python_version<'3.7'",
     ],
     extras_require={"all": ["shapely"]},
-    packages=find_packages(exclude=("tests",)),
+    # packages=find_packages(exclude=("tests",)),
+    packages=find_namespace_packages(exclude=("tests",)),
 )
